@@ -318,6 +318,57 @@ imp_relativa_esp <- arrange(imp_relativa_esp, desc(importancia_relativa))
 ###
 ################################################################################
 
+
+################################################################################
+###
+### Apresentar a razão de consistência dos especialistas
+
+razao_consistencia_esp <- data.frame(
+  especialista = character(), 
+  rc_tec_man_uso = numeric(), 
+  rc_proj_sust= numeric(), 
+  rc_prev_corr = numeric(), 
+  rc_int_des_seg_esp = numeric(), 
+  stringsAsFactors = FALSE)
+
+for (i in 1:15) {
+  razao_consistencia_esp[i, 1] <- paste0("esp_", i)
+  razao_consistencia_esp[i, 2] <- get(paste0("esp_", i))$razao_consistencia_tec_man_uso_esp
+  razao_consistencia_esp[i, 3] <- 0 # a razao de consistencia é sempre zero, pois trata-se da comparação entre dois subcritérios
+  razao_consistencia_esp[i, 4] <- 0
+razao_consistencia_esp[i, 5] <- get(paste0("esp_", i))$razao_consistencia_int_des_seg_esp
+
+if ((razao_consistencia_esp[i, 2] > 0.1) || (razao_consistencia_esp[i, 5] > 0.1)) {
+  razao_consistencia_esp[i, 1] <- paste0("esp_", i, " *")
+  message(paste0("esp_", i), " com razão de consistência > 0.1, reavaliar comparações par-a-par")
+  # razao_consistencia_esp[i, 6] <- "Razão de consistência > 0.1, reavaliar comparações par-a-par"
+}
+
+}
+
+
+# Visualizando o dataframe final
+print(razao_consistencia_esp)
+
+
+
+
+razao_consistencia_esp
+
+esp_2$razao_consistencia_tec_man_uso_esp
+esp_2$razao_consistencia_proj_sust
+
+esp_2$razao_consistencia_prev_corr
+esp_2$razao_consistencia_int_des_seg_esp
+
+
+###
+###
+################################################################################
+
+
+
+
  
 df_comp_prev_corr  <- df_comp %>%
   filter(especialista == id) %>%
