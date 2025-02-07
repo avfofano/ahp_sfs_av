@@ -270,8 +270,6 @@ esp_14 <- Especialista_AHP$new(14, df_qualif_esp, df_comparacoes_esp)
 esp_15 <- Especialista_AHP$new(15, df_qualif_esp, df_comparacoes_esp)
 
 
-esp_2$df_comp_proj_sust 
-
 
 
 ###################################     TESTES     ###################################
@@ -367,9 +365,6 @@ esp_2$razao_consistencia_int_des_seg_esp
 ################################################################################
 
 
-
-
- 
 df_comp_prev_corr  <- df_comp %>%
   filter(especialista == id) %>%
   select(projeto_ahp, sustentabilidade_ahp) %>% head(., 2)
@@ -384,16 +379,14 @@ esp_1$df_comp_int_des_seg %>% pull(1)
 df_comp <- esp_1$df_comp_tec_man_uso
 pesos <- esp_1$df_pesos_criterios_tec_man_uso
 
+ 
+pesos_test <- esp_1$df_pesos_criterios_tec_man_uso
+ 
+ 
+ 
+ 
 
 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
