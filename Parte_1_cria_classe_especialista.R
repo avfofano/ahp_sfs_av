@@ -283,10 +283,7 @@ esp_15 <- Especialista_AHP$new(15, df_qualif_esp, df_comparacoes_esp)
  
 esp_1$formacao_esp
 esp_1$id_esp
-esp_1$experiencia_esp
-esp_1$atuacao_esp
- 
-esp_1$nivel_importancia_relativa_esp
+
 esp_2$nivel_importancia_relativa_esp 
 print(esp_1$formacao_esp)
 
@@ -348,17 +345,11 @@ if ((razao_consistencia_esp[i, 2] > 0.1) || (razao_consistencia_esp[i, 5] > 0.1)
 # Visualizando o dataframe final
 print(razao_consistencia_esp)
 
-
-
-
-razao_consistencia_esp
-
 esp_2$razao_consistencia_tec_man_uso_esp
 esp_2$razao_consistencia_proj_sust
 
 esp_2$razao_consistencia_prev_corr
 esp_2$razao_consistencia_int_des_seg_esp
-
 
 ###
 ###
@@ -369,8 +360,6 @@ df_comp_prev_corr  <- df_comp %>%
   filter(especialista == id) %>%
   select(projeto_ahp, sustentabilidade_ahp) %>% head(., 2)
  
- 
-
 # A função pull é similar a $, com a vantagem de ser usada com pipes (%>%)
 esp_1$df_comp_int_des_seg %>% pull(1)
 
@@ -379,8 +368,6 @@ esp_1$df_comp_int_des_seg %>% pull(1)
 df_comp <- esp_1$df_comp_tec_man_uso
 pesos <- esp_1$df_pesos_criterios_tec_man_uso
 
- 
-pesos_test <- esp_1$df_pesos_criterios_tec_man_uso
  
  
  
