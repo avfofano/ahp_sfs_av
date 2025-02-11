@@ -22,6 +22,8 @@ Montar a matriz das instalações com Ranking Laudos, Ramking AHP e Ranking PCA
 
 Apresentar as correlações gerais para demonstrar que os resultados são compatíveis (ou melhor, demonstrar o nível de compatibilidade entre os resultados), a partir da análise do valor de R²
 
+Aplicar os pesos AHP, considerando a sua compatibilidade com os demais métodos
+
 # Aplicativo
 
 O aplicativo será usado para apresentar os resultados dos rankings, de forma a permitir comparar instalações, sistemas e elementos entre pares de instalações ou na própria instalação.
